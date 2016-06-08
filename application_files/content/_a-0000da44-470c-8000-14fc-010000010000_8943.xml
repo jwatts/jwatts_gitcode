@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <constant>
+        <name>CMIS_ATOM_URL</name>
+        <uuid>_a-0000da44-470c-8000-14fc-010000010000_8943</uuid>
+        <description>This is the ATOM URL provided by the Content Management System.&#xD;
+&#xD;
+Alfresco URL for Ver 5 is:&#xD;
+http://192.168.0.18:7070/alfresco/api/-default-/public/cmis/versions/1.0/atom&#xD;
+For ver 3 is:&#xD;
+http://192.168.0.18:8080/alfresco/service/cmis&#xD;
+For different settings, see&#xD;
+http://wiki.alfresco.com/wiki/CMIS#Alfresco_CMIS_Compliance&#xD;
+&#xD;
+</description>
+        <parentUuid>_a-0000da4b-7cda-8000-14fc-010000010000_9008</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <typedValue>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+            <value>
+                <el>http://192.168.0.18:8080/alfresco/service/cmis</el>
+                <el>http://localhost:9090/magnoliaAuthor/.magnolia/cmisatom/</el>
+                <el>http://localhost:6060/opencms/cmisatom/</el>
+            </value>
+        </typedValue>
+    </constant>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>sathya</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

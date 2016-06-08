@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <constant>
+        <name>CMIS_FILE_TYPE_ICONS_EXTENSION</name>
+        <uuid>_a-0000da4c-0be2-8000-14fc-010000010000_9082</uuid>
+        <description>Extensions that map to the file types&#xD;
+Always update this along with CMIS_FILE_TYPE_ICON</description>
+        <parentUuid>_a-0000da4c-c8be-8000-14fc-010000010000_9158</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <typedValue>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+            <value>
+                <el>file</el>
+                <el>eps</el>
+                <el>xls</el>
+                <el>exe</el>
+                <el>html</el>
+                <el>img</el>
+                <el>jpg</el>
+                <el>mov</el>
+                <el>pdf</el>
+                <el>ppt</el>
+                <el>txt</el>
+                <el>doc</el>
+                <el>xml</el>
+                <el>zip</el>
+                <el>xlsx</el>
+                <el>pptx</el>
+                <el>docx</el>
+                <el>ear</el>
+                <el>war</el>
+                <el>tar</el>
+                <el>gz</el>
+                <el>gif</el>
+                <el>jpeg</el>
+                <el>dv</el>
+                <el>htm</el>
+                <el>bat</el>
+                <el>dll</el>
+                <el>font</el>
+                <el>help</el>
+                <el>img</el>
+                <el>ini</el>
+                <el>iso</el>
+                <el>java</el>
+                <el>jar</el>
+                <el>js</el>
+                <el>mp3</el>
+                <el>mp4</el>
+                <el>png</el>
+                <el>properties</el>
+                <el>rar</el>
+                <el>sql</el>
+                <el>swf</el>
+                <el>sys</el>
+                <el>wmv</el>
+                <el>unknown</el>
+            </value>
+        </typedValue>
+    </constant>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>sathya</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

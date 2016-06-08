@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CMIS_getAlfrescoFileURL</name>
+        <uuid>_a-0000da54-e0b0-8000-14fc-010000010000_9273</uuid>
+        <description>Gets the URL for Alfresco System</description>
+        <parentUuid>_a-0000da4b-7cda-8000-14fc-010000010000_9008</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=CONCAT(
+  #&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9241&quot;(cmisSystem:ri!cmisName, keyList:#&quot;_a-0000da4c-0be2-8000-14fc-010000010000_9043&quot;),
+ &quot;/&quot;,
+ #&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9241&quot;(cmisSystem:ri!cmisName, keyList:#&quot;_a-0000da4c-0be2-8000-14fc-010000010000_9044&quot;),
+ &quot;?&quot;,
+ #&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9241&quot;(cmisSystem:ri!cmisName, keyList:#&quot;_a-0000da4c-0be2-8000-14fc-010000010000_9045&quot;),
+ &quot;=&quot;,
+ cmisObject[&quot;cmis:objectId&quot;]
+
+  /* For Alfresco 5, use cmisObject[&quot;alfcmis:nodeRef&quot;]
+     For Alfresco 3.4.d, use the objectId 
+  */
+)</definition>
+        <namedTypedValue>
+            <name>cmisName</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cmisObject</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

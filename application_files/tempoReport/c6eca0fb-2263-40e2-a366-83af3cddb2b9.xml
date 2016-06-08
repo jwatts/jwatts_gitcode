@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tempoReportHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <tempoReport name="CMIS Browser" a:uuid="c6eca0fb-2263-40e2-a366-83af3cddb2b9">
+        <a:description>Browse CMIS Document</a:description>
+        <a:uiExpr>#&quot;bc9a6da8-25cd-4b96-8c01-feed6233aa34&quot;()</a:uiExpr>
+        <a:urlStub>tmHrGg</a:urlStub>
+    </tempoReport>
+    <roleMap>
+        <role name="report_administrator">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000d73c-71e7-8000-4593-010000010000_7</groupUuid>
+            </groups>
+        </role>
+        <role name="report_viewer">
+            <users/>
+            <groups>
+                <groupUuid>_e-0000d73c-71e7-8000-4593-010000010000_9</groupUuid>
+            </groups>
+        </role>
+    </roleMap>
+</tempoReportHaul>

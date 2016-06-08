@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CMIS_generateDocumentDownloadLink</name>
+        <uuid>_a-0000da4c-0be2-8000-14fc-010000010000_9042</uuid>
+        <description>This is the way a URL to directly download a document from the CMS is generated.  
+For magnolia, it is
+http://localhost:9090/magnoliaPubli/dms-static/4727852d-987d-44df-89d4-2fcd3178e5a9/11001-Violoncello.pdf</description>
+        <parentUuid>_a-0000da4b-7cda-8000-14fc-010000010000_9008</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>=choose(
+DISPLAYVALUE(ri!cmisName,#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;,1+enumerate(COUNT(#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;)),COUNT(#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;)+1),
+#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9273&quot;(cmisName:#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;[1], cmisObject:ri!cmisObject),
+#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9271&quot;(cmisName:#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;[2], cmisObject:ri!cmisObject),
+#&quot;_a-0000da5d-ed00-8000-14fc-010000010000_10220&quot;(cmisName:#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;[3], cmisObject:ri!cmisObject),
+null
+)</definition>
+        <namedTypedValue>
+            <name>cmisObject</name>
+            <type>
+                <name>Variant</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>cmisName</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>sathya</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

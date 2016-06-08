@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CMIS_showCmisSelectionSection</name>
+        <uuid>6824545b-be28-43a4-8aeb-18fc98598f79</uuid>
+        <description>Show the option of selecting a CMIS system (drop down field)</description>
+        <parentUuid>_a-0000da4c-c8be-8000-14fc-010000010000_9159</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_sectionLayout&quot;(&#xD;
+			 firstColumnContents:{&#xD;
+			  #&quot;SYSTEM_SYSRULES_imageField&quot;(&#xD;
+				labelPosition:&quot;COLLAPSED&quot;,&#xD;
+				images:{&#xD;
+						#&quot;SYSTEM_SYSRULES_documentImage&quot;(&#xD;
+						  document:#&quot;_a-0000da56-072d-8000-14fc-010000010000_9322&quot;,&#xD;
+						  altText:&quot;CMIS Browser&quot;,&#xD;
+						  caption:&quot;CMIS Browser&quot;&#xD;
+						),&#xD;
+						if ( isNull(ri!cmisName),{},&#xD;
+							{&#xD;
+								#&quot;SYSTEM_SYSRULES_documentImage&quot;(&#xD;
+								  document:#&quot;_a-0000da56-072d-8000-14fc-010000010000_9329&quot;&#xD;
+								),&#xD;
+								#&quot;SYSTEM_SYSRULES_documentImage&quot;(&#xD;
+								  document:#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9241&quot;(cmisSystem:ri!cmisName, keyList:#&quot;_a-0000da56-072d-8000-14fc-010000010000_9330&quot;)&#xD;
+								)&#xD;
+							}&#xD;
+						)&#xD;
+						},&#xD;
+				size:&quot;STANDARD&quot;&#xD;
+			  )			   &#xD;
+			 },&#xD;
+			 secondColumnContents:{&#xD;
+			 if (isNull(ri!cmisName), 			 &#xD;
+				 #&quot;SYSTEM_SYSRULES_dropdownField&quot;(&#xD;
+					 label:&quot;CMIS System&quot;,&#xD;
+					 labelPosition:&quot;ADJACENT&quot;,&#xD;
+					 required:true,&#xD;
+					 disabled:NOT(IsNull(ri!cmisName)),&#xD;
+					 choiceLabels:{&#xD;
+					   #&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;&#xD;
+					 },&#xD;
+					 placeholderLabel:&quot;Select&quot;,&#xD;
+					 choiceValues:#&quot;_a-0000da54-e0b0-8000-14fc-010000010000_9233&quot;,&#xD;
+					 value:ri!cmisName,&#xD;
+					 saveInto:ri!cmisName&#xD;
+				   ),&#xD;
+			 &#xD;
+			   #&quot;SYSTEM_SYSRULES_linkField&quot;(&#xD;
+				 label:&quot;Reset&quot;,&#xD;
+				 labelPosition:&quot;COLLAPSED&quot;,&#xD;
+				 align:&quot;RIGHT&quot;,&#xD;
+				 links:#&quot;SYSTEM_SYSRULES_dynamicLink&quot;(&#xD;
+				   value:null,&#xD;
+				   saveInto:{ri!cmisName, ri!selectedObjectBreadcrumbName, ri!selectedObjectBreadcrumb, ri!selectedObject},&#xD;
+				   label:ri!cmisName &amp;&quot; &quot; &amp; char(10005)&#xD;
+				 )&#xD;
+			    )&#xD;
+			   )			   &#xD;
+			 }&#xD;
+		   )</definition>
+        <namedTypedValue>
+            <name>cmisName</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>selectedObjectBreadcrumbName</name>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>selectedObjectBreadcrumb</name>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>selectedObject</name>
+            <type>
+                <name>Text?list</name>
+                <namespace>http://www.appian.com/ae/types/2009</namespace>
+            </type>
+        </namedTypedValue>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>sathya</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>

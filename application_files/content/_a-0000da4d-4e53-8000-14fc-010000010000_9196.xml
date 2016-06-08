@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>CMIS_createAddFolderGridLink</name>
+        <uuid>_a-0000da4d-4e53-8000-14fc-010000010000_9196</uuid>
+        <description>Creates the images for the grid to add folder.  For documents, the link is disabled</description>
+        <parentUuid>_a-0000da4c-c8be-8000-14fc-010000010000_9157</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>#&quot;SYSTEM_SYSRULES_documentImage&quot;(
+	document:if(ri!objectType=#&quot;_a-0000da4b-7cda-8000-14fc-010000010000_9010&quot;,#&quot;_a-0000da4d-4e53-8000-14fc-010000010000_9187&quot;[1],#&quot;_a-0000da4d-4e53-8000-14fc-010000010000_9187&quot;[2]),
+	altText:if(ri!objectType=#&quot;_a-0000da4b-7cda-8000-14fc-010000010000_9010&quot;, &quot;Create sub-folder&quot;,&quot;&quot;),
+	caption:if(ri!objectType=#&quot;_a-0000da4b-7cda-8000-14fc-010000010000_9010&quot;, &quot;Create sub-folder&quot;,&quot;&quot;),
+	link:if(ri!objectType=#&quot;_a-0000da4b-7cda-8000-14fc-010000010000_9010&quot;,
+		#&quot;SYSTEM_SYSRULES_dynamicLink&quot;(
+		  value:ri!linkValue,
+		  saveInto:ri!addFolder,
+		  label:ri!linkName
+		),
+		null
+		)		
+ )</definition>
+        <namedTypedValue>
+            <name>objectType</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>linkValue</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>addFolder</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <namedTypedValue>
+            <name>linkName</name>
+            <type>
+                <name>string</name>
+                <namespace>http://www.w3.org/2001/XMLSchema</namespace>
+            </type>
+            <value/>
+        </namedTypedValue>
+        <preferredEditor>legacy</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users>
+                <userUuid>sathya</userUuid>
+            </users>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
