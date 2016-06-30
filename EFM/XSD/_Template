@@ -2,7 +2,7 @@
   <xsd:complexType name="***">
     <xsd:annotation>
       <xsd:appinfo source="appian.jpa">@Table(name="***")</xsd:appinfo>
-      <xsd:documentation><![CDATA[Fleet record. Parent record to vehicles.]]></xsd:documentation>
+      <xsd:documentation><![CDATA[***]]></xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
     
