@@ -1,0 +1,17 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="urn:com:appian:types:EFM" targetNamespace="urn:com:appian:types:EFM">
+  <xsd:complexType name="***">
+    <xsd:annotation>
+      <xsd:appinfo source="appian.jpa">@Table(name="***")</xsd:appinfo>
+      <xsd:documentation><![CDATA[***]]></xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+    
+      <xsd:element name="***" type="xsd:***">
+        <xsd:annotation>
+          <xsd:appinfo source="appian.jpa">@Id @GeneratedValue @Column(name="FLEET_ID")</xsd:appinfo>
+        </xsd:annotation>
+      </xsd:element>
+      
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
