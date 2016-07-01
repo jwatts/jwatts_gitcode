@@ -2,3 +2,26 @@
   EFM_DROP_MYSQL.sql
   Drop script for Fleet Management Application
 */
+
+/* Remove Foreign Key Constraints */
+
+
+
+/* Drop Tables */
+
+DROP TABLE IF EXISTS EFM_FLEET;
+DROP TABLE IF EXISTS EFM_LOCATION;
+DROP TABLE IF EXISTS EFM_TRIP;
+DROP TABLE IF EXISTS EFM_USER;
+DROP TABLE IF EXISTS EFM_VEHICLE;
+
+DROP TABLE IF EXISTS EFM_L_LOCATION_USER;
+DROP TABLE IF EXISTS EFM_L_VEHICLE_USER;
+
+/* Drop Views */
+
+
+/* Drop Procedures */
+
+/* Drop Home-To-Work Specific Objects */
+DROP TABLE IF EXISTS EFM_HTW_EXPENSES;
