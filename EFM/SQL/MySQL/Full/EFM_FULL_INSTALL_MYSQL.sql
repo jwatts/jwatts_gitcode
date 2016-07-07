@@ -212,6 +212,38 @@ LEFT JOIN EFM_VEHICLE_USAGE usg
 ON usg.VEH_ID = veh.VEH_ID
 GROUP BY veh.VEH_ID;
 
+CREATE OR REPLACE VIEW EFM_V_LAST_MAINTENANCE_DETAILS AS
+SELECT
+veh.VEH_ID AS vehicleId,
+maint.MAINT_END_DT AS lastMaintDt,
+maint.MAINT_IS_SCHEDULED AS wasScheduled
+FROM 
+EFM_VEHICLE veh
+LEFT JOIN EFM_MAINTENANCE_LOG maint ON maint.VEH_ID = veh.VEH_ID
+GROUP BY veh.VEH_ID
+ORDER BY maint.MAINT_END_DT DESC;
+
+CREATE OR REPLACE VIEW EFM_V_MAINTENANCE_METRICS AS
+SELECT
+  veh.VEH_ID AS vehicleId,
+  lastMaint.lastMaintDt AS lastMaintDt,
+  lastMaint.wasScheduled AS lastMaintScheduled,
+  veh.VEH_NEXT_MAINT_DT AS nextMaintDt,
+  veh.VEH_NEXT_MAINT_MILEAGE AS nextMaintMileage,
+  ROUND(
+    (1 - (
+      SUM(DATEDIFF(maint.MAINT_CHECK_OUT_DT, maint.MAINT_CHECK_IN_DT))
+      /
+      DATEDIFF(CURDATE(), veh.VEH_ADDED_DT)
+    )) * 100,
+    2
+  ) AS uptimePct
+FROM
+EFM_VEHICLE veh
+LEFT JOIN EFM_V_LAST_MAINTENANCE_DETAILS lastMaint ON lastMaint.vehicleId = veh.VEH_ID
+LEFT JOIN EFM_MAINTENANCE_LOG maint ON maint.VEH_ID = veh.VEH_ID
+GROUP BY veh.VEH_ID;
+
 /* Add Foreign Keys */
 
 /* - Commented out for now */
