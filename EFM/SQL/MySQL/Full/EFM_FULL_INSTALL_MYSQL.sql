@@ -9,6 +9,14 @@
   ======== EFM ======== 
 */
 
+/* Functions */
+
+CREATE FUNCTION BIGINT_TO_INT(x BIGINT)
+RETURNS INTEGER
+RETURN x;
+
+
+
 /* Install Tables */
 
 CREATE TABLE EFM_EXPENSE(
