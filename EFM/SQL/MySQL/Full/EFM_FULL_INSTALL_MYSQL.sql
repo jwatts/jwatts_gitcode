@@ -154,6 +154,13 @@ CREATE TABLE EFM_VEHICLE(
 CREATE TABLE EFM_VEHICLE_USAGE(
   USAGE_ID INT(11) NOT NULL AUTO_INCREMENT,
   VEH_ID INT(11) NOT NULL,
+  USAGE_USER VARCHAR(255),
+  USAGE_CHECK_OUT_DT DATETIME,
+  USAGE_CHECK_IN_DT DATETIME,
+  /* 
+    These columns are more expense-related and could be moved, 
+    but be sure to keep the usage_metrics view up to date 
+  */
   USAGE_GALLONS DOUBLE(10,2),
   USAGE_MILEAGE DOUBLE(10,1),
   USAGE_COST DOUBLE(10,2),
