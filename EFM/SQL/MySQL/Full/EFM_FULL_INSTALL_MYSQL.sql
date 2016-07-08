@@ -182,8 +182,13 @@ SELECT
   veh.VEH_ADDED_DT AS addedDt,
   veh.VEH_MILEAGE AS mileage,
   metrics.AVG_MPG AS mpg,
-  BIGINT_TO_INT(COUNT(trip.TRIP_ID)) AS numTrips,
-  SUM(trip.TRIP_END_DT - trip.TRIP_START_DT) AS daysInUse
+  BIGINT_TO_INT(COUNT(trip.USAGE_ID)) AS numTrips,
+  SUM(
+    DATEDIFF(
+    CASE WHEN trip.USAGE_CHECK_IN_DT IS NULL THEN  CURDATE() ELSE trip.USAGE_CHECK_IN_DT END,
+    trip.USAGE_CHECK_OUT_DT
+    ) + 1 /* Note: this does not currently account for multiple trips on the same day :/ */
+  ) AS daysInUse,
   veh.VEH_STATE AS state,
   veh.VEH_PLATE AS plate,
   veh.VEH_NEXT_MAINT_DT AS nextMaintDt,
@@ -199,7 +204,7 @@ FROM
   JOIN EFM_R_VEH_TYPE vtype ON vtype.VEC_TYPE_ID = veh.VEH_TYPE_ID
   JOIN EFM_FLEET fleet ON fleet.FLEET_ID = veh.FLEET_ID
   JOIN EFM_V_USAGE_METRICS metrics ON metrics.VEH_ID = veh.VEH_ID
-  LEFT JOIN EFM_TRIP trip ON trip.VEH_ID = veh.VEH_ID
+  LEFT JOIN EFM_VEHICLE_USAGE trip ON (trip.VEH_ID = veh.VEH_ID AND trip.USAGE_CHECK_OUT_DT IS NOT NULL)
   GROUP BY veh.VEH_ID
 );
 
