@@ -67,7 +67,7 @@ INSERT INTO `CTS_R_FLDR_TYPE` (`R_FLDR_T_ID`, `R_FLDR_CR_ID`, `R_FLDR_T_VAL`, `R
 (14, 1, 'Efficiency Review', 1),
 (15, 1, 'FOIA Request', 1),
 (16, 1, 'Homeland Intelligence Request (HIR)', 1),
-(17, 1, 'ICE Personnel Complaint', 1),
+(17, 1, 'Personnel Complaint', 1),
 (18, 1, 'Invitations', 1),
 (19, 1, 'Issue Paper/Fact Sheet', 1),
 (20, 1, 'Legal Proceeding', 1),
@@ -78,7 +78,7 @@ INSERT INTO `CTS_R_FLDR_TYPE` (`R_FLDR_T_ID`, `R_FLDR_CR_ID`, `R_FLDR_T_VAL`, `R
 (25, 1, 'Phone Inquiry', 1),
 (26, 1, 'Policy Directive', 1),
 (27, 1, 'QFR', 1),
-(28, 1, 'QFR – Non ICE Component', 1),
+(28, 1, 'QFR – Non Core Component', 1),
 (29, 1, 'Resume', 1),
 (30, 1, 'Secretary Request', 1),
 (31, 1, 'Social Correspondence', 1),
@@ -101,7 +101,7 @@ INSERT INTO `CTS_R_FLDR_TYPE` (`R_FLDR_T_ID`, `R_FLDR_CR_ID`, `R_FLDR_T_VAL`, `R
 (48, 2, 'E-mail', 1),
 (49, 2, 'FOIA Request', 1),
 (50, 2, 'Homeland Intelligence Request (HIR)', 1),
-(51, 2, 'ICE Personnel Complaint', 1),
+(51, 2, 'Personnel Complaint', 1),
 (52, 2, 'Information Memo', 1),
 (53, 2, 'Issue Paper/Fact Sheet', 1),
 (54, 2, 'Legal Proceeding', 1),
@@ -113,7 +113,7 @@ INSERT INTO `CTS_R_FLDR_TYPE` (`R_FLDR_T_ID`, `R_FLDR_CR_ID`, `R_FLDR_T_VAL`, `R
 (60, 2, 'OPR Report', 1),
 (61, 2, 'Policy Directive', 1),
 (62, 2, 'QFR', 1),
-(63, 2, 'QFR – Non ICE Component', 1),
+(63, 2, 'QFR – Non Core Component', 1),
 (64, 2, 'Secretary Request', 1),
 (65, 2, 'Talking Points', 1),
 (66, 2, 'Travel Request', 1),
@@ -348,7 +348,7 @@ INSERT INTO `CTS_R_FLDR_CLOSE_RSN` (`R_FLDR_CR_ID`, `R_FLDR_CR_VAL`, `R_FLDR_CR_
 (3, 'Closed, no action required', 1),
 (4, 'Normal', 1),
 (5, 'Other', 1),
-(6, 'Transferred to CIS', 1);
+(6, 'Transferred', 1);
 
 /*CTS_R_FLDR_DUE_DATE*/
 INSERT INTO `CTS_R_FLDR_DUE_DATE` (`R_FLDR_DD_ID`, `R_FLDR_T_ID`, `R_FLDR_DD_VAL`, `R_FLDR_DD_ACTV_FLG`) VALUES
