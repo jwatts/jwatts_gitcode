@@ -1,14 +1,4 @@
 /* ***** AF Release 1.0.0 SQL Script to create database ***** */  
- 
-/* ***** DROP VIEWS IF EXIST ***** */ 
-
-/* ***** DROP TABLES IF EXIST ***** */
-
-DROP TABLE AF_BLLTN_MSG CASCADE CONSTRAINTS;
-/
-
-DROP TABLE AF_USER CASCADE CONSTRAINTS;
-/
 
 /* ***** CREATE REFERENCE TABLES ***** */
 
@@ -70,3 +60,5 @@ END;
 /* ***** UPDATE TABLES WITH CONSTRAINTS ***** */ 
 
 /* ***** CREATE VIEWS ***** */
+
+COMMIT;
