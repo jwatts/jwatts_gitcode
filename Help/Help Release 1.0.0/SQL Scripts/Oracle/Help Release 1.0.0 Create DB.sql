@@ -239,27 +239,27 @@ ALTER TABLE HELP_L_RSC_TAG ADD CONSTRAINT R_TAG_R_TAG_ID_FK FOREIGN KEY (R_TAG_I
 /* CREATE VIEWS */
 CREATE VIEW HELP_V_RESOURCE  AS  
   select 
-    rsc.RSC_ID AS `RSC_ID`,
-    rsc.RSC_NM AS `RSC_NM`,
-    cast(rsc.R_CAT_ID as char(4)) AS `R_CAT_ID`,
-    cat.R_CAT_VAL AS `R_CAT_VAL`,
-    (case when isnull(subcat.R_SUBCAT_ID) then '' else cast(subcat.R_SUBCAT_ID as char(4)) end) AS `R_SUBCAT_ID`,
-    subcat.R_SUBCAT_NAME AS `R_SUBCAT_NAME`,
-    cast(rsc.R_TYPE_ID as char(4)) AS `R_TYPE_ID`,
-    type.R_TYPE_VAL AS `R_TYPE_VAL`,
-    rsc.RSC_APN_FLDR_ID AS `RSC_APN_FLDR_ID`,
-    rsc.RSC_SMMRY AS `RSC_SMMRY`,
-    rsc.RSC_DESC AS `RSC_DESC`,
-    rsc.RSC_INTRNL_FLG AS `RSC_INTRNL_FLG`,
-    cast(rsc.RSC_STS as char(4)) AS `RSC_STS`,
-    status.R_STS_VAL AS `RSC_STS_VAL`,
-    rsc.CREATED_DATETIME AS `CREATED_DATETIME`,
-    rsc.LAST_MODIFIED_DATETIME AS `LAST_MODIFIED_DATETIME` 
+    rsc.RSC_ID AS RSC_ID,
+    rsc.RSC_NM AS RSC_NM,
+    cast(rsc.R_CAT_ID as char(4)) AS R_CAT_ID,
+    cat.R_CAT_VAL AS R_CAT_VAL,
+    (case when subcat.R_SUBCAT_ID IS NULL then '' else cast(subcat.R_SUBCAT_ID as char(4)) end) AS R_SUBCAT_ID,
+    subcat.R_SUBCAT_NAME AS R_SUBCAT_NAME,
+    cast(rsc.R_TYPE_ID as char(4)) AS R_TYPE_ID,
+    type.R_TYPE_VAL AS R_TYPE_VAL,
+    rsc.RSC_APN_FLDR_ID AS RSC_APN_FLDR_ID,
+    rsc.RSC_SMMRY AS RSC_SMMRY,
+    rsc.RSC_DESC AS RSC_DESC,
+    rsc.RSC_INTRNL_FLG AS RSC_INTRNL_FLG,
+    cast(rsc.RSC_STS as char(4)) AS RSC_STS,
+    status.R_STS_VAL AS RSC_STS_VAL,
+    rsc.CREATED_DATETIME AS CREATED_DATETIME,
+    rsc.LAST_MODIFIED_DATETIME AS LAST_MODIFIED_DATETIME 
   from 
-    HELP_RSC `rsc` 
-    join `HELP_R_RSC_CAT` cat on(rsc.R_CAT_ID = cat.R_CAT_ID)
-    left join `HELP_R_RSC_SUBCAT` subcat on(rsc.R_SUBCAT_ID = subcat.R_SUBCAT_ID) 
-    join `HELP_R_RSC_TYPE` type on(rsc.R_TYPE_ID = type.R_TYPE_ID) 
-    join `HELP_R_RSC_STS` status on (rsc.RSC_STS = status.R_STS_ID);
+    HELP_RSC rsc 
+    join HELP_R_RSC_CAT cat on rsc.R_CAT_ID = cat.R_CAT_ID
+    left join HELP_R_RSC_SUBCAT subcat on rsc.R_SUBCAT_ID = subcat.R_SUBCAT_ID
+    join HELP_R_RSC_TYPE type on rsc.R_TYPE_ID = type.R_TYPE_ID
+    join HELP_R_RSC_STS status on rsc.RSC_STS = status.R_STS_ID;
     
 COMMIT;
