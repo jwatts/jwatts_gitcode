@@ -237,29 +237,56 @@ ALTER TABLE HELP_L_RSC_TAG ADD CONSTRAINT R_TAG_R_TAG_ID_FK FOREIGN KEY (R_TAG_I
   
   
 /* CREATE VIEWS */
-CREATE VIEW HELP_V_RESOURCE  AS  
-  select 
-    rsc.RSC_ID AS RSC_ID,
-    rsc.RSC_NM AS RSC_NM,
-    cast(rsc.R_CAT_ID as varchar2(4)) AS R_CAT_ID,
-    cat.R_CAT_VAL AS R_CAT_VAL,
-    (case when subcat.R_SUBCAT_ID IS NULL then '' else cast(subcat.R_SUBCAT_ID as varchar2(4)) end) AS R_SUBCAT_ID,
-    subcat.R_SUBCAT_NAME AS R_SUBCAT_NAME,
-    cast(rsc.R_TYPE_ID as varchar2(4)) AS R_TYPE_ID,
-    type.R_TYPE_VAL AS R_TYPE_VAL,
-    rsc.RSC_APN_FLDR_ID AS RSC_APN_FLDR_ID,
-    rsc.RSC_SMMRY AS RSC_SMMRY,
-    rsc.RSC_DESC AS RSC_DESC,
-    rsc.RSC_INTRNL_FLG AS RSC_INTRNL_FLG,
-    cast(rsc.RSC_STS as varchar2(4)) AS RSC_STS,
-    status.R_STS_VAL AS RSC_STS_VAL,
-    rsc.CREATED_DATETIME AS CREATED_DATETIME,
-    rsc.LAST_MODIFIED_DATETIME AS LAST_MODIFIED_DATETIME 
-  from 
-    HELP_RSC rsc 
-    join HELP_R_RSC_CAT cat on rsc.R_CAT_ID = cat.R_CAT_ID
-    left join HELP_R_RSC_SUBCAT subcat on rsc.R_SUBCAT_ID = subcat.R_SUBCAT_ID
-    join HELP_R_RSC_TYPE type on rsc.R_TYPE_ID = type.R_TYPE_ID
-    join HELP_R_RSC_STS status on rsc.RSC_STS = status.R_STS_ID;
-    
+SET DEFINE OFF;
+CREATE OR REPLACE FORCE VIEW HELP_V_RESOURCE
+(
+   RSC_ID,
+   RSC_NM,
+   R_CAT_ID,
+   R_CAT_VAL,
+   R_SUBCAT_ID,
+   R_SUBCAT_NAME,
+   R_TYPE_ID,
+   R_TYPE_VAL,
+   RSC_APN_FLDR_ID,
+   RSC_SMMRY,
+   RSC_DESC,
+   RSC_INTRNL_FLG,
+   RSC_STS,
+   RSC_STS_VAL,
+   CREATED_DATETIME,
+   LAST_MODIFIED_DATETIME
+)
+AS
+   SELECT rsc.RSC_ID AS RSC_ID,
+          rsc.RSC_NM AS RSC_NM,
+          CAST (rsc.R_CAT_ID AS VARCHAR2 (4)) AS R_CAT_ID,
+          cat.R_CAT_VAL AS R_CAT_VAL,
+          (CASE
+              WHEN subcat.R_SUBCAT_ID IS NULL THEN '-1'
+              ELSE CAST (subcat.R_SUBCAT_ID AS VARCHAR2 (4))
+           END)
+             AS R_SUBCAT_ID,
+          subcat.R_SUBCAT_NAME AS R_SUBCAT_NAME,
+          CAST (rsc.R_TYPE_ID AS VARCHAR2 (4)) AS R_TYPE_ID,
+          TYPE.R_TYPE_VAL AS R_TYPE_VAL,
+          rsc.RSC_APN_FLDR_ID AS RSC_APN_FLDR_ID,
+          rsc.RSC_SMMRY AS RSC_SMMRY,
+          CASE
+             WHEN rsc.RSC_DESC IS NULL THEN 'Not Specified'
+             ELSE rsc.RSC_DESC
+          END
+             AS RSC_DESC,
+          rsc.RSC_INTRNL_FLG AS RSC_INTRNL_FLG,
+          CAST (rsc.RSC_STS AS VARCHAR2 (4)) AS RSC_STS,
+          status.R_STS_VAL AS RSC_STS_VAL,
+          rsc.CREATED_DATETIME AS CREATED_DATETIME,
+          rsc.LAST_MODIFIED_DATETIME AS LAST_MODIFIED_DATETIME
+     FROM HELP_RSC rsc
+          JOIN HELP_R_RSC_CAT cat ON rsc.R_CAT_ID = cat.R_CAT_ID
+          LEFT JOIN HELP_R_RSC_SUBCAT subcat
+             ON rsc.R_SUBCAT_ID = subcat.R_SUBCAT_ID
+          JOIN HELP_R_RSC_TYPE TYPE ON rsc.R_TYPE_ID = TYPE.R_TYPE_ID
+          JOIN HELP_R_RSC_STS status ON rsc.RSC_STS = status.R_STS_ID;
+
 COMMIT;
