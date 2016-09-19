@@ -1,0 +1,475 @@
+Warnings (1):
+processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a "EFM_STG_SyncFolders": The object references the deleted type [{urn:com:appian:types:EFM}EFM_Vehicle^2]. The deleted type will not be included in the export and references to the type have been updated to point to [{urn:com:appian:types:EFM}EFM_Vehicle], which must be present on the target system or included in this package. After importing, please verify that the object works as expected. (APNX-2-4053-003)
+
+Success (6):
+content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 "EFM_TEXT_BTN_NEXT"
+content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 "EFM_FRM_Sites_Trips_createNew"
+content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 "EFM_RPT_Trip_getMyTrips"
+content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 "JW_TEST_HTW_EXPENSES"
+processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a "EFM_STG_SyncFolders"
+application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 "EFM Backport"
+
+Referenced precedents that were not exported (23):
+datatype 1232 {urn:com:appian:types:EFM}EFM_V_User_Trips
+datatype 806 {urn:com:appian:types:EFM}EFM_Vehicle^2
+user justin.watts justin.watts
+content 21226 _a-0000dd17-9077-8000-9ba2-011c48011c48_6616
+content 21281 51c9ee7e-d413-4fbb-80ac-73c5e29381c6
+content 21282 83216625-4c10-41a9-b646-2504a468113c
+content 21238 _a-0000dd17-9077-8000-9ba2-011c48011c48_6715
+content 21227 _a-0000dd17-9077-8000-9ba2-011c48011c48_6617
+content 21580 abe97b64-adb3-44c1-ae8f-492a7cba079a
+content 21277 7c98133d-c841-4ff7-ab87-803e62aab0c1
+content 21278 60049f0e-bb06-4263-bc31-02bed043c9e0
+content 21279 8c29ccb3-91ab-422d-98c7-93cc1a8d6282
+content 21280 _a-0000dd4b-0482-8000-9ba2-011c48011c48_18189
+content 3171 _a-0000d62a-67b3-8000-da6f-010000010000_951
+content 21560 _a-0000dd17-9077-8000-9ba2-011c48011c48_6538
+content 22140 45d6696b-2f83-4ebe-a151-a294c988bede
+content 21231 0573d4fe-fcb5-4251-ad0e-081f618a4796
+content 21233 _a-0000dd17-9077-8000-9ba2-011c48011c48_6579
+content 22137 _a-0000dd17-9077-8000-9ba2-011c48011c48_9989
+content 22138 _a-0000dd17-9077-8000-9ba2-011c48011c48_10014
+content 22113 _a-0000dd17-9077-8000-9ba2-011c48011c48_9733
+content 21538 7f28ea60-693a-4952-bbbc-effd6fd06858
+processModelFolder 16 _g-0000dd16-76eb-8000-f92f-7f0000014e7a_51
+
+Trace:
+2016-08-29 17:41:15.037 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Begin transport.
+2016-08-29 17:41:15.037 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Retrieving object data.
+2016-08-29 17:41:15.042 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 App associated objects: [content=[_a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606, c80a3de3-a7a9-4cb0-9f85-916c82a88fd0, _a-0000dd17-9077-8000-9ba2-011c48011c48_6582, _a-0000dd17-9077-8000-9ba2-011c48011c48_10010],processModel=[0007dd81-1233-8000-f92f-7f0000014e7a]]
+2016-08-29 17:41:15.047 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Invalid associated objects: []
+2016-08-29 17:41:15.047 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Adding valid associated objects to be exported: GlobalBindingMap[content={_a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606=22161, c80a3de3-a7a9-4cb0-9f85-916c82a88fd0=22162, _a-0000dd17-9077-8000-9ba2-011c48011c48_6582=22164, _a-0000dd17-9077-8000-9ba2-011c48011c48_10010=22165},processModel={0007dd81-1233-8000-f92f-7f0000014e7a=1347}]
+2016-08-29 17:41:15.047 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Setting uuids of object references.
+2016-08-29 17:41:15.047 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: Application.forum
+2016-08-29 17:41:15.048 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: Application.parent
+2016-08-29 17:41:15.053 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@746f7eb1[
+  ContentRole[name=readers,inherit=false,allowForAll=false]
+  ContentRole[name=authors,inherit=false,allowForAll=false]
+  ContentRole[name=administrators,usernames=[justin.watts],inherit=false,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=129:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=false,SEC_INH_EDITOR=false,SEC_INH_VIEWER=false,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2016-08-29 17:41:15.053 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: ContentRole[name=readers,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.053 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: ContentRole[name=authors,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.053 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: ContentRole[name=administrators,usernames=[justin.watts],inherit=false,allowForAll=false]
+2016-08-29 17:41:15.055 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.055 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.055 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.06 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Begin transport.
+2016-08-29 17:41:15.06 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Retrieving object data.
+2016-08-29 17:41:15.068 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Setting uuids of object references.
+2016-08-29 17:41:15.068 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: [Content:id=22160,versionId=-1,name=EFM_TEXT_BTN_NEXT,description=Next button text,type=32,subtype=0,uuid=_a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606,parent=21226,parentName=Buttons,parentType=2,log=22161,logName=EFM_TEXT_BTN_NEXT,state=255,visibility=35,security=143,creator=justin.watts,createdTimestamp=2016-08-29 17:30:09.0,updatedTimestamp=2016-08-29 17:30:09.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={system=0, hidden=0, ruletype=0, multiple=0, value=Next, returnType=3},partition=2,partitionName=/usr/local/appian/ae/_admin/accdocs2]
+2016-08-29 17:41:15.068 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: Constant.forum
+2016-08-29 17:41:15.069 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: Constant.parent
+2016-08-29 17:41:15.074 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@396d917a[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[justin.watts],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2016-08-29 17:41:15.074 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.074 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.074 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: ContentRole[name=administrators,usernames=[justin.watts],inherit=true,allowForAll=false]
+2016-08-29 17:41:15.076 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.076 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.076 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.076 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Exporting binary resources.
+2016-08-29 17:41:15.076 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Serializing object to XML.
+2016-08-29 17:41:15.08 DEBUG content 22161 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606 Object transported.
+2016-08-29 17:41:15.08 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Begin transport.
+2016-08-29 17:41:15.08 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Retrieving object data.
+2016-08-29 17:41:15.102 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Setting uuids of object references.
+2016-08-29 17:41:15.102 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: [Content:id=21581,versionId=-1,name=EFM_FRM_Sites_Trips_createNew,description=Creates a new Trip,type=32,subtype=1,uuid=c80a3de3-a7a9-4cb0-9f85-916c82a88fd0,parent=21280,parentName=Forms,parentType=2,log=22162,logName=EFM_FRM_Sites_Trips_createNew,state=255,visibility=35,security=15,creator=justin.watts,createdTimestamp=2016-08-29 17:30:21.0,updatedTimestamp=2016-08-29 17:30:21.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@723174ad, system=0, preferredEditor=interface, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@67749552, definition=/* NOTE: currently passing in hardcoded userid TODO: null handling */
+=load(
+  local!selectedTrip,
+  local!endPoints:{"40.736017,-74.173535"},
+  local!comments,
+  local!selectedRecentTripIdx,
+  local!createNew:false,
+  local!recentVehicles,
+  local!recentLocations,
+  #"SYSTEM_SYSRULES_formLayout"(
+    firstColumnContents: {
+      /*Displays Trip Summary Information*/
+      #"51c9ee7e-d413-4fbb-80ac-73c5e29381c6"(
+        startLocationId: ri!startLocationId,
+        endLocationId: ri!endLocationId,
+        selectedVehicleId: ri!selectedVehicleId,
+        selectedRecentTrip: ri!selectedRecentTrip,
+        recentLocations: local!recentLocations,
+        recentVehicles: local!recentVehicles
+      ),
+      /*Prompts user to choose Existing or New trip*/
+      if(or(local!createNew,not(isnull(ri!selectedRecentTrip))),
+        {},
+        #"abe97b64-adb3-44c1-ae8f-492a7cba079a"(
+          selectedRecentTrip: ri!selectedRecentTrip,
+          createNew: local!createNew,
+          recentVehicles: local!recentVehicles,
+          recentLocations: local!recentLocations
+        )
+      ),
+      /*Prompts user to select a vehicle*/
+      if(and(local!createNew,ri!selectedVehicleId<1),
+        #"7c98133d-c841-4ff7-ab87-803e62aab0c1"(
+          recentVehicles: local!recentVehicles,
+          selectedVehicleId: ri!selectedVehicleId
+        ),{}
+      ),
+      /*Prompts user to select a Start location*/
+      if(and(local!createNew,ri!startLocationId<1),      
+        #"60049f0e-bb06-4263-bc31-02bed043c9e0"(
+          recentLocations: local!recentLocations,
+          startLocationId: ri!startLocationId
+        ),{}
+      ),
+      /*Prompts user to select an End location*/
+      if(and(local!createNew,ri!endLocationId<1),
+        #"8c29ccb3-91ab-422d-98c7-93cc1a8d6282"(
+          recentLocations: local!recentLocations,
+          endLocationId: ri!endLocationId
+        ),{}
+      ),
+      /*Prompts user to enter Mileage info*/
+      if(or(local!createNew,not(isnull(ri!selectedRecentTrip))),
+        #"83216625-4c10-41a9-b646-2504a468113c"(
+          createNew: local!createNew,
+          odometer: ri!odometer,
+          comments: local!comments,
+          expenseFlag: ri!expenseFlag,
+          endPoints: local!endPoints
+        ),{}
+      )
+    },
+    secondColumnContents: {},
+    buttons: if(or(local!createNew,not(isnull(ri!selectedRecentTrip))),
+      #"SYSTEM_SYSRULES_ButtonLayout"(
+        secondaryButtons:{
+            #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+              label: #"_a-0000dd17-9077-8000-9ba2-011c48011c48_6715",
+              style: "NORMAL",
+              value: #"_a-0000dd17-9077-8000-9ba2-011c48011c48_6715",
+              skipValidation:true,
+              saveInto: {
+                  ri!submitValue
+              }
+            )          
+        },
+        primaryButtons: {
+            #"SYSTEM_SYSRULES_ButtonWidgetSubmit"(
+              label: if(ri!expenseFlag,#"_a-0000dd3a-49e4-8000-9ba2-011c48011c48_23606",#"_a-0000dd17-9077-8000-9ba2-011c48011c48_6617"),
+              style: "PRIMARY",
+              value:#"_a-0000dd17-9077-8000-9ba2-011c48011c48_6617",
+              saveInto: {
+                ri!submitValue,
+                /* hard coded for now until we discuss user management strategy */
+                a!save(ri!userId,1)
+              }
+            )
+        }
+      ),{}
+    ),
+    validations: {}
+  )
+
+), dep_types=[Ljava.lang.String;@27ce9444, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@76d27f14, dep_variables=[[Ljava.lang.String;@fbfe97f},partition=3,partitionName=/usr/local/appian/ae/_admin/accdocs3]
+2016-08-29 17:41:15.213 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: FreeformRule.forum
+2016-08-29 17:41:15.214 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=odometer,it=2,v=<null>]
+2016-08-29 17:41:15.214 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=startLocationId,it=1,v=<null>]
+2016-08-29 17:41:15.214 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=endLocationId,it=1,v=<null>]
+2016-08-29 17:41:15.214 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=selectedVehicleId,it=1,v=<null>]
+2016-08-29 17:41:15.214 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=selectedRecentTrip,it=1232,v=<null>]
+2016-08-29 17:41:15.214 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=userId,it=1,v=<null>]
+2016-08-29 17:41:15.214 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=submitValue,it=3,v=]
+2016-08-29 17:41:15.215 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: TypedVariable[name=expenseFlag,it=26,v=<null>]
+2016-08-29 17:41:15.215 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: FreeformRule.parent
+2016-08-29 17:41:15.222 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@24e8755f[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2016-08-29 17:41:15.222 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.222 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.222 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.222 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.222 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.222 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.223 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Exporting binary resources.
+2016-08-29 17:41:15.223 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Serializing object to XML.
+2016-08-29 17:41:15.25 DEBUG content 22162 c80a3de3-a7a9-4cb0-9f85-916c82a88fd0 Object transported.
+2016-08-29 17:41:15.25 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Begin transport.
+2016-08-29 17:41:15.25 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Retrieving object data.
+2016-08-29 17:41:15.269 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Setting uuids of object references.
+2016-08-29 17:41:15.269 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: [Content:id=22141,versionId=-1,name=EFM_RPT_Trip_getMyTrips,description=Returns a user's trips,type=32,subtype=1,uuid=_a-0000dd17-9077-8000-9ba2-011c48011c48_6582,parent=21233,parentName=Reports,parentType=2,log=22164,logName=EFM_RPT_Trip_getMyTrips,state=255,visibility=35,security=143,creator=justin.watts,createdTimestamp=2016-08-29 17:35:57.0,updatedTimestamp=2016-08-29 17:35:57.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@70f2ef7f, system=0, preferredEditor=interface, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@299ebcad, definition=
+/* NOTE: currently passing in hardcoded userid TODO: null handling */
+
+=load(
+  local!pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(startIndex:1,batchSize:10,sort:#"SYSTEM_SYSRULES_sortInfo"(field:"tripDateTime",ascending:false)),
+  local!data: #"_a-0000dd17-9077-8000-9ba2-011c48011c48_6538"(userId: 1,pagingInfo:local!pagingInfo),
+  #"SYSTEM_SYSRULES_dashboardLayout"(
+    firstColumnContents: {
+      /* Null check returning a banner notifying user that */
+      /* they don't have any trips associated with their account */
+      if(#"_a-0000d62a-67b3-8000-da6f-010000010000_951"(local!data.data),
+        #"0573d4fe-fcb5-4251-ad0e-081f618a4796"(type: "Trips"),
+        {
+          #"SYSTEM_SYSRULES_sectionLayout"(
+            label: "My Trips",
+            firstColumnContents: {
+
+              /* This grid is not configured to page and sort */
+              #"SYSTEM_SYSRULES_gridField"(
+                labelPosition: "COLLAPSED",
+                totalCount: local!data.totalCount,
+                columns: {
+                  #"SYSTEM_SYSRULES_gridTextColumn"(label: "Date",field:"tripDateTime",data:index(local!data.data,"tripDateTime", {})),
+                  #"SYSTEM_SYSRULES_gridTextColumn"(alignment:"RIGHT",label: "Mileage",field:"mileage",data:apply(fixed(_,2),index(local!data.data,"mileage", {}))),
+                  #"SYSTEM_SYSRULES_gridImageColumn"(label: "Approved", data: {
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"), altText: "Approved icon", caption: "Approved"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_NOTDONE"), altText: "Rejected icon", caption: "Rejected"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"), altText: "Approved icon", caption: "Approved"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_NOTDONE"), altText: "Rejected icon", caption: "Rejected"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"), altText: "Approved icon", caption: "Approved"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"), altText: "Approved icon", caption: "Approved"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"), altText: "Approved icon", caption: "Approved"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_NOTDONE"), altText: "Rejected icon", caption: "Rejected"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_OK"), altText: "Approved icon", caption: "Approved"),
+                    #"SYSTEM_SYSRULES_documentImage"(document: #"SYSTEM_SYSRULES_iconIndicator"("STATUS_NOTDONE"), altText: "Rejected icon", caption: "Rejected")
+                  }, size: "ICON")
+                },
+                value: local!pagingInfo,
+                saveInto:{
+                  local!pagingInfo,
+                  a!save(local!data,#"_a-0000dd17-9077-8000-9ba2-011c48011c48_6538"(userId: 1,pagingInfo:save!value))
+                }
+              )
+            }
+          ),
+          #"SYSTEM_SYSRULES_sectionLayout"(
+            firstColumnContents:{
+              #"SYSTEM_SYSRULES_lineChartField"(
+                label: "Mileage per Date/Time",
+                showLegend: false,
+                yAxisMin:0,
+                series: #"SYSTEM_SYSRULES_chartSeries"(
+                  label:"Miles",
+                  data: local!data.data.mileage
+                ),
+                categories: local!data.data.tripDateTime
+              ),
+              #"SYSTEM_SYSRULES_textField"(
+                label: "Average Overall Cost per Mile:",
+                readOnly: true,
+                labelPosition: "ADJACENT",
+                value: #"45d6696b-2f83-4ebe-a151-a294c988bede"(tripData: local!data)
+              )
+            }
+          )
+        }
+      )
+    }
+  )
+)
+, dep_types=[Ljava.lang.String;@53d93640, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@70116169, dep_variables=[[Ljava.lang.String;@17fff103},partition=2,partitionName=/usr/local/appian/ae/_admin/accdocs2]
+2016-08-29 17:41:15.304 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: FreeformRule.forum
+2016-08-29 17:41:15.305 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: FreeformRule.parent
+2016-08-29 17:41:15.311 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@22cdf1b[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,usernames=[justin.watts],inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=143:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=true,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2016-08-29 17:41:15.323 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.323 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.323 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: ContentRole[name=administrators,usernames=[justin.watts],inherit=true,allowForAll=false]
+2016-08-29 17:41:15.324 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.324 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.324 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.325 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Exporting binary resources.
+2016-08-29 17:41:15.325 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Serializing object to XML.
+2016-08-29 17:41:15.329 DEBUG content 22164 _a-0000dd17-9077-8000-9ba2-011c48011c48_6582 Object transported.
+2016-08-29 17:41:15.329 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Begin transport.
+2016-08-29 17:41:15.329 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Retrieving object data.
+2016-08-29 17:41:15.346 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Setting uuids of object references.
+2016-08-29 17:41:15.346 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: [Content:id=22139,versionId=-1,name=JW_TEST_HTW_EXPENSES,description=,type=32,subtype=1,uuid=_a-0000dd17-9077-8000-9ba2-011c48011c48_10010,parent=22113,parentName=Test,parentType=2,log=22165,logName=JW_TEST_HTW_EXPENSES,state=255,visibility=35,security=15,creator=justin.watts,createdTimestamp=2016-08-29 17:38:18.0,updatedTimestamp=2016-08-29 17:38:18.0,size=0,lockedBy=ANONYMOUS,changesRequireApproval=false,attributes={dep_rules=[Ljava.lang.Long;@6b9cb420, system=0, preferredEditor=interface, hidden=0, offlineEnabled=false, ruletype=1, dep_functions=[Ljava.lang.String;@8f2c217, definition=load(
+  local!showDetails:false,
+  local!pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(startIndex:1,batchSize:5,sort:#"SYSTEM_SYSRULES_sortInfo"(field:"expenseDateTime",ascending:false)),
+  local!data:#"SYSTEM_SYSRULES_queryEntity"(
+    entity:#"_a-0000dd17-9077-8000-9ba2-011c48011c48_10014",
+    query:#"SYSTEM_SYSRULES_query"(
+      pagingInfo:local!pagingInfo
+    )
+  ),
+  local!dataAgg:#"SYSTEM_SYSRULES_queryEntity"(
+    entity:#"_a-0000dd17-9077-8000-9ba2-011c48011c48_10014",
+    query:#"SYSTEM_SYSRULES_query"(
+      aggregation:#"SYSTEM_SYSRULES_queryAggregation"(
+        aggregationColumns:{
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field:"type",alias:"type",isGrouping:true),
+          #"SYSTEM_SYSRULES_queryAggregationColumn"(field:"amount",alias:"amount",isGrouping:false,aggregationFunction:"SUM")
+        }
+      ),
+      pagingInfo:#"SYSTEM_SYSRULES_pagingInfo"(startIndex:1,batchSize:-1)
+    )
+  ),
+  local!tempReceipt:getdocumentsfromfolder(rootFolder:#"_a-0000dd17-9077-8000-9ba2-011c48011c48_9989",recursiveSearch:false)[1],
+  #"SYSTEM_SYSRULES_dashboardLayout"(
+    firstColumnContents:{
+      /* Null check returning a banner notifying user that */
+      /* they don't have any expenses associated with their account */
+      if(#"_a-0000d62a-67b3-8000-da6f-010000010000_951"(local!data.data),
+        #"0573d4fe-fcb5-4251-ad0e-081f618a4796"(type: "Expenses"),
+        {
+          #"SYSTEM_SYSRULES_sectionLayout"(
+            firstColumnContents:{
+              #"SYSTEM_SYSRULES_gridField"(
+                totalCount:local!data.totalCount,
+                columns:{
+                  #"SYSTEM_SYSRULES_gridTextColumn"(
+                    label:"Date",
+                    field:"expenseDateTime",
+                    data:index(local!data.data,"expenseDateTime",{})
+                  ),
+                  #"SYSTEM_SYSRULES_gridTextColumn"(
+                    alignment:"RIGHT",
+                    label:"Amount ($)",
+                    field:"amount",
+                    data:apply(fn!fixed(_,2),index(local!data.data,"amount",{}))
+                  ),
+                  #"SYSTEM_SYSRULES_gridTextColumn"(
+                    label:"Type",
+                    field:"type",
+                    data:index(local!data.data,"type",{})
+                  ),
+                  #"SYSTEM_SYSRULES_gridTextColumn"(
+                    label:"Comments",
+                    field:"comments",
+                    data:index(local!data.data,"comments",{})
+                  ),              
+                  #"SYSTEM_SYSRULES_gridImageColumn"(
+                    label:"Receipt",
+                    data:apply(#"SYSTEM_SYSRULES_documentImage"(document:_),repeat(count(index(local!data.data,"amount",{})),local!tempReceipt))
+                  )           
+                },
+                value:local!pagingInfo,
+                saveInto:{
+                  local!pagingInfo,
+                    a!save(local!data,#"SYSTEM_SYSRULES_queryEntity"(
+                    entity:#"_a-0000dd17-9077-8000-9ba2-011c48011c48_10014",
+                    query:#"SYSTEM_SYSRULES_query"(
+                      pagingInfo:local!pagingInfo
+                    )
+                  ))
+                }
+              )
+            }
+          ),
+          if(local!showDetails,
+            #"SYSTEM_SYSRULES_sectionLayout"(
+              firstColumnContents:{
+                #"SYSTEM_SYSRULES_imageField"(
+                  images:{
+                    apply(#"SYSTEM_SYSRULES_documentImage"(document:_),tointeger(getdocumentsfromfolder(rootFolder:#"_a-0000dd17-9077-8000-9ba2-011c48011c48_9989",recursiveSearch:false)))
+                  }
+                )
+              }
+            ),
+          {}),
+          #"SYSTEM_SYSRULES_sectionLayout"(
+            firstColumnContents:{
+              #"SYSTEM_SYSRULES_pieChartField"(
+                label:"Breakdown of expenses",
+                showTooltips:true,
+                showDataLabels:true,
+                series:apply(#"SYSTEM_SYSRULES_chartSeries"(label:_,data:_),merge(local!dataAgg.data.type,local!dataAgg.data.amount))
+              )
+            }
+          )
+        }
+      )
+    }
+  )
+), dep_types=[Ljava.lang.String;@40a2eb8b, parameters=[Lcom.appiancorp.suiteapi.process.TypedVariable;@6d6fae55, dep_variables=[[Ljava.lang.String;@63dc3a6c},partition=3,partitionName=/usr/local/appian/ae/_admin/accdocs3]
+2016-08-29 17:41:15.358 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: FreeformRule.forum
+2016-08-29 17:41:15.358 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: FreeformRule.parent
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: com.appiancorp.suiteapi.content.ContentRoleMap@3ca5972c[
+  ContentRole[name=readers,inherit=true,allowForAll=false]
+  ContentRole[name=authors,inherit=true,allowForAll=false]
+  ContentRole[name=administrators,inherit=true,allowForAll=false]
+  ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+  ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+  ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+  securityVector=15:SEC_PUBLIC=true,SEC_CREATOR_ADMIN=false,SEC_INH_ADMIN=true,SEC_INH_EDITOR=true,SEC_INH_VIEWER=true,SEC_ALL_ADMIN=false,SEC_ALL_EDITOR=false,SEC_ALL_VIEWER=false
+]
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: ContentRole[name=readers,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: ContentRole[name=authors,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: ContentRole[name=administrators,inherit=true,allowForAll=false]
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: ContentRole[name=denyReaders,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: ContentRole[name=denyAuthors,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Processing reference: ContentRole[name=denyAdministrators,inherit=false,allowForAll=false]
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Exporting binary resources.
+2016-08-29 17:41:15.364 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Serializing object to XML.
+2016-08-29 17:41:15.367 DEBUG content 22165 _a-0000dd17-9077-8000-9ba2-011c48011c48_10010 Object transported.
+2016-08-29 17:41:15.369 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Begin transport.
+2016-08-29 17:41:15.369 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Retrieving object data.
+2016-08-29 17:41:15.479 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Setting uuids of object references.
+2016-08-29 17:41:15.479 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessModelHaul.folderId
+2016-08-29 17:41:15.481 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessModelHaul.modelDashboardPageId
+2016-08-29 17:41:15.481 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessModelHaul.processDashboardPageId
+2016-08-29 17:41:15.481 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessModel.emailAttachmentFolderId
+2016-08-29 17:41:15.489 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: InternalForm.docId
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=pmID,it=23,v=<null>]
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=inMap,it=111,v={}]
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=procInheritsPriority,it=1,v=1]
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=pmUUID,it=3,v=]
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=isAsynchronous,it=26,v=1]
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=isTransparent,it=26,v=1]
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=inheritSecurity,it=26,v=0]
+2016-08-29 17:41:15.49 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=defaultNode,it=1,v=8]
+2016-08-29 17:41:15.491 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=rules,it=111,v={ActivityClassParameter[name=rule,it=11,v={ActivityClassParameter[name=expression,it=26,v=<null>],ActivityClassParameter[name=node,it=1,v=1],ActivityClassParameter[name=label,it=3,v=]}]}]
+2016-08-29 17:41:15.491 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=fired,it=1,v=0]
+2016-08-29 17:41:15.491 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=arrivedNodes,it=101,v=<null>]
+2016-08-29 17:41:15.491 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=defaultNode,it=1,v=1]
+2016-08-29 17:41:15.491 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=rules,it=111,v={ActivityClassParameter[name=rule,it=11,v={ActivityClassParameter[name=expression,it=26,v=<null>],ActivityClassParameter[name=node,it=1,v=14],ActivityClassParameter[name=label,it=3,v=]}]}]
+2016-08-29 17:41:15.492 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=fired,it=1,v=0]
+2016-08-29 17:41:15.492 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ActivityClassParameter[name=arrivedNodes,it=101,v=<null>]
+2016-08-29 17:41:15.492 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessVariable[name=totalSize,it=1,v=0]
+2016-08-29 17:41:15.492 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessVariable[name=currentCount,it=1,v=0]
+2016-08-29 17:41:15.492 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessVariable[name=pageSize,it=1,v=50]
+2016-08-29 17:41:15.492 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessVariable[name=pagedVehicleData,it=806,v=<null>]
+2016-08-29 17:41:15.492 WARN processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a The object references the deleted type [{urn:com:appian:types:EFM}EFM_Vehicle^2]. The deleted type will not be included in the export and references to the type have been updated to point to [{urn:com:appian:types:EFM}EFM_Vehicle], which must be present on the target system or included in this package. After importing, please verify that the object works as expected. (APNX-2-4053-003)
+2016-08-29 17:41:15.492 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessVariable[name=startIndex,it=1,v=1]
+2016-08-29 17:41:15.493 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: ProcessVariable[name=vehicleDS,it=898,v=<null>]
+2016-08-29 17:41:15.493 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: com.appiancorp.suiteapi.process.ProcessRoleMap@5ee71f1f[
+  Role[name=ADMIN_OWNER,usernames=[justin.watts]]
+  Role[name=EDITOR]
+  Role[name=EXPLICIT_NONMEMBER]
+  Role[name=VIEWER]
+  Role[name=MANAGER]
+  Role[name=INITIATOR]
+]
+2016-08-29 17:41:15.493 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: Role[name=ADMIN_OWNER,usernames=[justin.watts]]
+2016-08-29 17:41:15.495 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: Role[name=EDITOR]
+2016-08-29 17:41:15.495 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: Role[name=EXPLICIT_NONMEMBER]
+2016-08-29 17:41:15.495 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: Role[name=VIEWER]
+2016-08-29 17:41:15.495 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: Role[name=MANAGER]
+2016-08-29 17:41:15.495 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Processing reference: Role[name=INITIATOR]
+2016-08-29 17:41:15.5 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Exporting binary resources.
+2016-08-29 17:41:15.5 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Serializing object to XML.
+2016-08-29 17:41:15.531 DEBUG processModel 1347 0007dd81-1233-8000-f92f-7f0000014e7a Object transported.
+2016-08-29 17:41:15.531 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Exporting binary resources.
+2016-08-29 17:41:15.531 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Serializing object to XML.
+2016-08-29 17:41:15.54 DEBUG application 22150 _a-0000dd3a-49e4-8000-9ba2-011c48011c48_23594 Object transported.

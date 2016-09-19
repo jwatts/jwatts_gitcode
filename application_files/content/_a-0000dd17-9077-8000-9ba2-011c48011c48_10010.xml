@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<contentHaul xmlns:a="http://www.appian.com/ae/types/2009">
+    <rule>
+        <name>JW_TEST_HTW_EXPENSES</name>
+        <uuid>_a-0000dd17-9077-8000-9ba2-011c48011c48_10010</uuid>
+        <description></description>
+        <parentUuid>_a-0000dd17-9077-8000-9ba2-011c48011c48_9733</parentUuid>
+        <visibility>
+            <advertise>false</advertise>
+            <hierarchy>true</hierarchy>
+            <indexable>true</indexable>
+            <quota>false</quota>
+            <searchable>true</searchable>
+            <system>false</system>
+            <unlogged>false</unlogged>
+        </visibility>
+        <definition>load(
+  local!showDetails:false,
+  local!pagingInfo:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex:1,batchSize:5,sort:#&quot;SYSTEM_SYSRULES_sortInfo&quot;(field:&quot;expenseDateTime&quot;,ascending:false)),
+  local!data:#&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+    entity:#&quot;_a-0000dd17-9077-8000-9ba2-011c48011c48_10014&quot;,
+    query:#&quot;SYSTEM_SYSRULES_query&quot;(
+      pagingInfo:local!pagingInfo
+    )
+  ),
+  local!dataAgg:#&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+    entity:#&quot;_a-0000dd17-9077-8000-9ba2-011c48011c48_10014&quot;,
+    query:#&quot;SYSTEM_SYSRULES_query&quot;(
+      aggregation:#&quot;SYSTEM_SYSRULES_queryAggregation&quot;(
+        aggregationColumns:{
+          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field:&quot;type&quot;,alias:&quot;type&quot;,isGrouping:true),
+          #&quot;SYSTEM_SYSRULES_queryAggregationColumn&quot;(field:&quot;amount&quot;,alias:&quot;amount&quot;,isGrouping:false,aggregationFunction:&quot;SUM&quot;)
+        }
+      ),
+      pagingInfo:#&quot;SYSTEM_SYSRULES_pagingInfo&quot;(startIndex:1,batchSize:-1)
+    )
+  ),
+  local!tempReceipt:getdocumentsfromfolder(rootFolder:#&quot;_a-0000dd17-9077-8000-9ba2-011c48011c48_9989&quot;,recursiveSearch:false)[1],
+  #&quot;SYSTEM_SYSRULES_dashboardLayout&quot;(
+    firstColumnContents:{
+      /* Null check returning a banner notifying user that */
+      /* they don't have any expenses associated with their account */
+      if(#&quot;_a-0000d62a-67b3-8000-da6f-010000010000_951&quot;(local!data.data),
+        #&quot;0573d4fe-fcb5-4251-ad0e-081f618a4796&quot;(type: &quot;Expenses&quot;),
+        {
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            firstColumnContents:{
+              #&quot;SYSTEM_SYSRULES_gridField&quot;(
+                totalCount:local!data.totalCount,
+                columns:{
+                  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label:&quot;Date&quot;,
+                    field:&quot;expenseDateTime&quot;,
+                    data:index(local!data.data,&quot;expenseDateTime&quot;,{})
+                  ),
+                  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    alignment:&quot;RIGHT&quot;,
+                    label:&quot;Amount ($)&quot;,
+                    field:&quot;amount&quot;,
+                    data:apply(fn!fixed(_,2),index(local!data.data,&quot;amount&quot;,{}))
+                  ),
+                  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label:&quot;Type&quot;,
+                    field:&quot;type&quot;,
+                    data:index(local!data.data,&quot;type&quot;,{})
+                  ),
+                  #&quot;SYSTEM_SYSRULES_gridTextColumn&quot;(
+                    label:&quot;Comments&quot;,
+                    field:&quot;comments&quot;,
+                    data:index(local!data.data,&quot;comments&quot;,{})
+                  ),              
+                  #&quot;SYSTEM_SYSRULES_gridImageColumn&quot;(
+                    label:&quot;Receipt&quot;,
+                    data:apply(#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:_),repeat(count(index(local!data.data,&quot;amount&quot;,{})),local!tempReceipt))
+                  )           
+                },
+                value:local!pagingInfo,
+                saveInto:{
+                  local!pagingInfo,
+                    a!save(local!data,#&quot;SYSTEM_SYSRULES_queryEntity&quot;(
+                    entity:#&quot;_a-0000dd17-9077-8000-9ba2-011c48011c48_10014&quot;,
+                    query:#&quot;SYSTEM_SYSRULES_query&quot;(
+                      pagingInfo:local!pagingInfo
+                    )
+                  ))
+                }
+              )
+            }
+          ),
+          if(local!showDetails,
+            #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+              firstColumnContents:{
+                #&quot;SYSTEM_SYSRULES_imageField&quot;(
+                  images:{
+                    apply(#&quot;SYSTEM_SYSRULES_documentImage&quot;(document:_),tointeger(getdocumentsfromfolder(rootFolder:#&quot;_a-0000dd17-9077-8000-9ba2-011c48011c48_9989&quot;,recursiveSearch:false)))
+                  }
+                )
+              }
+            ),
+          {}),
+          #&quot;SYSTEM_SYSRULES_sectionLayout&quot;(
+            firstColumnContents:{
+              #&quot;SYSTEM_SYSRULES_pieChartField&quot;(
+                label:&quot;Breakdown of expenses&quot;,
+                showTooltips:true,
+                showDataLabels:true,
+                series:apply(#&quot;SYSTEM_SYSRULES_chartSeries&quot;(label:_,data:_),merge(local!dataAgg.data.type,local!dataAgg.data.amount))
+              )
+            }
+          )
+        }
+      )
+    }
+  )
+)</definition>
+        <preferredEditor>interface</preferredEditor>
+        <offlineEnabled>false</offlineEnabled>
+    </rule>
+    <roleMap public="true">
+        <role allowForAll="false" inherit="true" name="readers">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="authors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="true" name="administrators">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyReaders">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAuthors">
+            <users/>
+            <groups/>
+        </role>
+        <role allowForAll="false" inherit="false" name="denyAdministrators">
+            <users/>
+            <groups/>
+        </role>
+    </roleMap>
+</contentHaul>
